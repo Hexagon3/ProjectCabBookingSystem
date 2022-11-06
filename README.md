@@ -1,5 +1,5 @@
 # ProjectCabBookingSystem 
-We are tyr to build a cab system that is devided into two part <br>
+We are try to build a cab system that is devided into two part <br>
 **1. Driver side view** <br>
 **2. Passenger side view**<br>
 
