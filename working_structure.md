@@ -6,6 +6,16 @@
 3. Admin 
 Single App for Two interface driver and Passenger.
 Admin will login through web
+### Passenger Interface Component 
+* **Login / Register Page**
+* **Home / Instant Booking Page** <br>
+  1. Navbar ->{ Navigation Menu Box, Profile}
+  2. Navigation Menu Box -> { Inbox, ..., Settings}
+  3. bottom Bar -> {List View, Map View}
+  4. Content-> Two types 1. map based  2. Text Based
+* **Scheduled Booking Page**
+* **Booking History Page**
+### CarDriver Interface Component 
 
 ## Modules 
 1. Passenger Interface (Frontend) --> react native
