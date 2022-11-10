@@ -4,15 +4,23 @@
 ### Basic requirments 
 ```
 class PassengerRequirements {
+	is_shared: Boolean,
+	car_detail:{
+	  no_seat:int,
+	  model:string,
+	  is_ac: boolean
+	}
 	initial:cordinate,
 	final:cordinate,
-	journey_time:time,
+	schedule_time:time,
 }
 
 class Driver {
+	is_shared:boolean,
 	availabel_seat:int,
 	total_seat:int,
 	current:cordinate,
+	estimated_free_time:time
 }
 
 AvailableDriverList = [d_1, d_2, ... , d_m]
