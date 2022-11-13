@@ -31,11 +31,11 @@ Admin will login through web
 * **Login**(With name and password)
 * **Home / List of passenger request page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
-  2. Navigation Menu Box -> { Inbox, Show Car details, ..., Settings}
+  2. Navigation Menu Box -> { Inbox, ..., About Car, Settings}
   3. bottom Bar -> {List View, Map View}
   4. Content-> Two types 1. map based  2. Text Based
 * **Travel History**(Total km, Placess)
-* **Total profit**
+* **Total profit**(Today, Last Month, Last year)
 
 ## Modules 
 1. Passenger Interface (Frontend) --> react native
