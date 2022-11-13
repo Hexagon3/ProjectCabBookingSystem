@@ -7,7 +7,7 @@
 Single App for Two interface driver and Passenger.
 Admin will login through web
 
-## Sign up & Register Page (As Driver or as a passenger)
+## **Sign up & Register Page**(As Driver or as a passenger) or **Login**
 * **For Passenger** <br>
   1. Name
   2. Father's and Mother's name
