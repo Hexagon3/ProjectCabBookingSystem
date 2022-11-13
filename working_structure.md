@@ -6,11 +6,11 @@
 3. Admin 
 Single App for Two interface driver and Passenger.
 Admin will login through web
-## Sign up & Register Page (As Driver or as a passenger)
+### Sign up & Register Page (As Driver or as a passenger)
 * **For Passenger**<br>
   1.
 * **For Driver** <br>
-### Passenger Interface Component 
+#### Passenger Interface Component 
 * **Login**(With name & password)
 * **Home / Instant Booking Page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
@@ -19,7 +19,7 @@ Admin will login through web
   4. Content-> Two types 1. map based  2. Text Based
 * **Scheduled Booking Page**
 * **Booking History Page**
-### CarDriver Interface Component 
+#### CarDriver Interface Component 
 * **Login**(With name and password)
 * **Home / List of passenger request page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
