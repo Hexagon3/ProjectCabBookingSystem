@@ -17,9 +17,10 @@ Admin will login through web
 * **Registration Page For Driver**
   1. Name
   2. Date of birth
-  3. Aadher details etc...
-  4. Car Details
-  5. Uploade 1.Profile Photo; 2.Aadher Card; 3.Birth cirtificate; 4.Licence cirtificate
+  3. Aadher Number
+  4. Car type
+  5. Car Details
+  6. Uploade 1.Profile Photo; 2.Aadher Card; 3.Birth cirtificate; 4.Licence certificate
 ### Passenger Interface Component 
 * **Login**(With name & password)
   1. User Name
