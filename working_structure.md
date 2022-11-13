@@ -7,11 +7,23 @@
 Single App for Two interface driver and Passenger.
 Admin will login through web
 
-## **Sign up & Register Page**(As Driver or as a passenger) or **Login**
-* **For Passenger** 
-* **For Driver**
+## Sign up & Register Page
+* **Sign Up as a user**
+  1. User Name
+  2. Set Password
+  3. Email id
+  4. Phone Number(Calling number)
+  5. 
+* **Registration Page For Driver**
+  1. Name
+  2. Date of birth
+  3. Aadher details etc...
+  4. Car Details
+  5. Uploade 1.Profile Photo; 2.Aadher Card; 3.Birth cirtificate; 4.Licence cirtificate
 ### Passenger Interface Component 
 * **Login**(With name & password)
+  1. User Name
+  2. Password
 * **Home / Instant Booking Page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
   2. Navigation Menu Box -> { Inbox, ..., Settings}
@@ -21,6 +33,8 @@ Admin will login through web
 * **Booking History Page**
 ### CarDriver Interface Component 
 * **Login**(With name and password)
+  1. User Name
+  2. Password
 * **Home / List of passenger request page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
   2. Navigation Menu Box -> { Inbox, ..., About Car, Settings}
