@@ -20,7 +20,7 @@ Admin will login through web
   3. Aadher Number
   4. Address 
   5. Car type(no of seat)  
-  6. Car Detail
+  6. Car Detail(If own_car_registration='yes')
     * car_numner
     * engine_number
     * brand_name
