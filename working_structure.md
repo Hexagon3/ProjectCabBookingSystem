@@ -19,11 +19,17 @@ Admin will login through web
   2. Date of birth
   3. Aadher Number
   4. Address 
-  5. Car type(no of seat)
-  6. Car Details
-  7. License No
+  5. Car type(no of seat)  
+  6. Car Detail
+    * car_numner
+    * engine_number
+    * brand_name
+    * model_number
+    * mileage
+    * seat_no
   8. Driving Experience 
   9. Docuiment Uploade 1.Profile Photo; 2.Aadher Card; 3.Licence certificate
+ 
 ### Passenger Interface Component 
 * **Login**(With name & password)
   1. User Name
