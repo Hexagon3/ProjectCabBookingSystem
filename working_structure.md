@@ -82,7 +82,20 @@ Admin will login through web
 4. According to coice of CarDrivers Passenger can see available Car 
 5. Passenger will decide for which Cardriver he/she will go.
 
+## API URLS PATH
 
+- http://HOST_IP/user_api/user/profile
+- http://HOST_IP/user_api/user/history
+- http://HOST_IP/user_api/user/schedule
+- http://HOST_IP/user_api/user/login
+- http://HOST_IP/user_api/user/signup
+<br>
+
+- http://HOST_IP/user_api/driver/profile
+- http://HOST_IP/user_api/driver/history
+- http://HOST_IP/user_api/driver/car_detail
+- http://HOST_IP/user_api/driver/registration
+- http://HOST_IP/user_api/driver/login
 
 
 
