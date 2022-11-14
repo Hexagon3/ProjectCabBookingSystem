@@ -41,6 +41,7 @@ Admin will login through web
       *  Profile
       *  Schedule
       *  Inbox   
+      *  Help
       *  Settings 
   3. bottom Bar -> {List View, Map View}
   4. Content-> Two types 1. map based  2. Text Based
