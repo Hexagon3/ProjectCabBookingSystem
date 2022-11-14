@@ -13,23 +13,33 @@ Admin will login through web
   2. Set Password
   3. Email id
   4. Phone Number(Calling number)
-  5. 
 * **Registration Page For Driver**
+  0. Inherit From User
   1. Name
   2. Date of birth
   3. Aadher Number
-  4. Car type
+  4. Address 
+  5. Car type(no of seat)
   5. Car Details
-  6. Uploade 1.Profile Photo; 2.Aadher Card; 3.Birth cirtificate; 4.Licence certificate
+  6. License No
+  7. Age 
+  8. Driving Experience 
+  9. Docuiment Uploade 1.Profile Photo; 2.Aadher Card; 3.Licence certificate
 ### Passenger Interface Component 
 * **Login**(With name & password)
   1. User Name
   2. Password
 * **Home / Instant Booking Page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
-  2. Navigation Menu Box -> { Inbox, ..., Settings}
+  2. Navigation Menu Box         
+      *  Order History 
+      *  Profile
+      *  Schedule
+      *  Inbox   
+      *  Settings 
   3. bottom Bar -> {List View, Map View}
   4. Content-> Two types 1. map based  2. Text Based
+* **Profile Page**
 * **Scheduled Booking Page**
 * **Booking History Page**
 ### CarDriver Interface Component 
@@ -38,9 +48,15 @@ Admin will login through web
   2. Password
 * **Home / List of passenger request page** <br>
   1. Navbar ->{ Navigation Menu Box, Profile}
-  2. Navigation Menu Box -> { Inbox, ..., About Car, Settings}
+  2. Navigation Menu Box         
+      *  Work History 
+      *  Profile
+      *  Inbox 
+      *  About Car 
+      *  Settings 
   3. bottom Bar -> {List View, Map View}
   4. Content-> Two types 1. map based  2. Text Based
+* **Profile Page**
 * **Travel History**(Total km, Placess)
 * **Total profit**(Today, Last Month, Last year)
 
