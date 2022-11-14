@@ -13,17 +13,17 @@ Admin will login through web
   2. Set Password
   3. Email id
   4. Phone Number(Calling number)
-* **Registration Page For Driver**
+* **Registration Page For Driver**<br>
   0. Inherit From User
-  1. Name
+  1. Name  -- > First Name , Last Name
   2. Date of birth
   3. Aadher Number
   4. Address 
   5. Car type(no of seat)
-  5. Car Details
-  6. License No
-  7. Driving Experience 
-  8. Docuiment Uploade 1.Profile Photo; 2.Aadher Card; 3.Licence certificate
+  6. Car Details
+  7. License No
+  8. Driving Experience 
+  9. Docuiment Uploade 1.Profile Photo; 2.Aadher Card; 3.Licence certificate
 ### Passenger Interface Component 
 * **Login**(With name & password)
   1. User Name
