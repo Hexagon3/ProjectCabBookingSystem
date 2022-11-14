@@ -22,9 +22,8 @@ Admin will login through web
   5. Car type(no of seat)
   5. Car Details
   6. License No
-  7. Age 
-  8. Driving Experience 
-  9. Docuiment Uploade 1.Profile Photo; 2.Aadher Card; 3.Licence certificate
+  7. Driving Experience 
+  8. Docuiment Uploade 1.Profile Photo; 2.Aadher Card; 3.Licence certificate
 ### Passenger Interface Component 
 * **Login**(With name & password)
   1. User Name
