@@ -27,10 +27,14 @@ class PassengerSerializers(serializers.ModelSerializer):
 
 
 class UserxSerializers(serializers.ModelSerializer):
+    driver = DriverSerializers()
+    passenger = PassengerSerializers()
+
     class Meta:
         model = Userx
+
         fields = [
             'first_name', 'last_name', 'email',
-            'username', 'is_driver'
+            'username', 'is_driver', 'driver', 'passenger'
 
         ]
