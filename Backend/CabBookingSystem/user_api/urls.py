@@ -8,6 +8,7 @@ from .views import *
 urlpatterns = [
     # User
     path('user/profile/', user_profile),                  # Get
+    path('user/profile/<int:pk>', user_profile),                  # Get
     path('user/history', user_history),                   # Get
     path('user/schedule', user_schedule),                 # Get
     path('user/login', user_login),                       # Post
@@ -15,6 +16,7 @@ urlpatterns = [
 
     # Driver
     path('driver/profile', driver_profile),               # Get
+    path('driver/profile/<int:pk>', driver_profile),               # Get
     path('driver/history', driver_history),               # Get
     path('driver/car_detail', driver_car_detail),         # Get
     path('driver/registration', driver_registration),     # Post

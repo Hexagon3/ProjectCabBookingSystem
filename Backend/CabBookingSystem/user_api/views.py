@@ -1,24 +1,19 @@
-from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from django.contrib.auth import login
+# from rest_framework.authtoken.views import ObtainAuthToken
 
-from rest_framework.authtoken.views import ObtainAuthToken
+
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Userx
 from user_api.serializers import UserxSerializers
 # Create your views here.
 
 
-# class Login(ObtainAuthToken):
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data['user']
-#         token, created = Token.objects.get_or_create(user=user)
-#         return Response({'token': token.key})
-
-
+# User
 @api_view(['post'])
 def user_login(req):
     data = req.data
@@ -26,7 +21,7 @@ def user_login(req):
     serializer = UserxSerializers(user)
     token, created = Token.objects.get_or_create(user=user)
     data = serializer.data
-    print(token, created)
+    login(req, user)
     data["token"] = token.key
     print(data, serializer.data)
     return Response(data)
@@ -34,42 +29,59 @@ def user_login(req):
 
 @api_view(['post'])
 def user_signup(req):
-    serializer = UserxSerializers(req.data)
+    serializer = UserxSerializers(data=req.data)
+    if serializer.is_valid(raise_exception=True):
+        user = serializer.save()
+        print(user)
     data = serializer.data
     return Response(data)
 
 
-@api_view(['post'])
-def user_profile(req):
-    print(req.user)
+@api_view(['get'])
+def user_profile(req, pk=None):
+    if pk is None:
+        # user = req.user
+        # print(req.user)
+        # serializer = UserxSerializers(data= user)
+        return Response({})
+    user = Userx.objects.get(id=pk)
+    serializer = UserxSerializers(user)
+    print(pk)
+    return Response(serializer.data)
+
+
+@api_view(['get'])
+def user_history(req):
     return Response({})
 
 
-def user_history(req):
-    pass
-
-
+@api_view(['get'])
 def user_schedule(req):
-    pass
+    return Response({})
+
+# Driver
 
 
+@api_view(['get'])
 def driver_profile(req):
-    pass
+    return Response({})
 
 
+@api_view(['get'])
 def driver_history(req):
-    pass
+    return Response({})
 
 
+@api_view(['get'])
 def driver_car_detail(req):
-    pass
+    return Response({})
 
 
 @api_view(['post'])
 def driver_registration(req):
-    pass
+    return Response({})
 
 
 @api_view(['post'])
 def driver_login(req):
-    pass
+    return Response({})

@@ -38,3 +38,4 @@ class UserxSerializers(serializers.ModelSerializer):
             'username', 'is_driver', 'driver', 'passenger'
 
         ]
+        depth = 1

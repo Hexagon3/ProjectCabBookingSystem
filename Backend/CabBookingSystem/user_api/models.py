@@ -33,7 +33,7 @@ class UserManagerx(UserManager):
         passenger.save()
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
-        extra_fields.setdefault("is_driver", is_driver)
+        # extra_fields.setdefault("is_driver", False)
         extra_fields.setdefault("passenger", passenger)
         extra_fields.setdefault("driver", None)
 
