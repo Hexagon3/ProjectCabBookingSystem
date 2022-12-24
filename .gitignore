@@ -158,3 +158,4 @@ web-build/
 
 # macOS
 .DS_Store
+temp/
