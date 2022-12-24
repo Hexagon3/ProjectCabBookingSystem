@@ -8,9 +8,20 @@ from django.contrib.auth import login
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from .models import Userx
+from .models import Userx, Passenger, Driver
 from user_api.serializers import UserxSerializers
 # Create your views here.
+
+from rest_framework_simplejwt.tokens import RefreshToken
+
+def get_tokens_for_user(user):
+    refresh = RefreshToken.for_user(user)
+
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+    }
+
 
 
 # User
@@ -29,12 +40,13 @@ def user_login(req):
 
 @api_view(['post'])
 def user_signup(req):
+    user = None
     serializer = UserxSerializers(data=req.data)
     if serializer.is_valid(raise_exception=True):
         user = serializer.save()
         print(user)
-    data = serializer.data
-    return Response(data)
+    
+    return Response({"status":"Success"})
 
 
 @api_view(['get'])
