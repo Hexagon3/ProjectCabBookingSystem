@@ -27,8 +27,8 @@ class PassengerSerializers(serializers.ModelSerializer):
 
 
 class UserxSerializers(serializers.ModelSerializer):
-    driver = DriverSerializers()
-    passenger = PassengerSerializers()
+    # driver = DriverSerializers()
+    # passenger = PassengerSerializers()
 
     class Meta:
         model = Userx
@@ -38,4 +38,4 @@ class UserxSerializers(serializers.ModelSerializer):
             'username', 'is_driver', 'driver', 'passenger'
 
         ]
-        depth = 1
+        # depth = 1
