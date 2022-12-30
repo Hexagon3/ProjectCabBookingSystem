@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 # from rest_framework.authtoken.views import ObtainAuthToken
 
 
@@ -28,13 +28,25 @@ def get_tokens_for_user(user):
 @api_view(['post'])
 def user_login(req):
     data = req.data
-    user = Userx.objects.get(username=data["username"])
-    serializer = UserxSerializers(user)
-    token, created = Token.objects.get_or_create(user=user)
-    data = serializer.data
-    login(req, user)
-    data["token"] = token.key
-    print(data, serializer.data)
+    try:
+        try:
+            username = data["username"]        
+            user = Userx.objects.get(username = username)
+        except :
+            email = data["email"]
+            user = Userx.objects.get(email = email)
+        finally:
+            password=data["password"]          
+    except:
+        return Response({"status": "Failed"})
+    if not user.check_password(password):
+        return Response({"status": "Password Not Match"})     
+    # serializer = UserxSerializers(user)
+    token = get_tokens_for_user(user)
+    # data = serializer.data
+    # login(req, user)
+    data["token"] = token
+    # print(data, serializer.data)
     return Response(data)
 
 
@@ -44,9 +56,15 @@ def user_signup(req):
     serializer = UserxSerializers(data=req.data)
     if serializer.is_valid(raise_exception=True):
         user = serializer.save()
+        user.set_password(req.data['password'])
+        user.save()
         print(user)
-    
-    return Response({"status":"Success"})
+        data = serializer.data
+        data["status"]="Success"
+    return Response(data)
+@api_view(['get'])
+def list_user(req):
+    s = Userx.objects.all()
 
 
 @api_view(['get'])

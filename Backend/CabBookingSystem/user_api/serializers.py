@@ -35,7 +35,11 @@ class UserxSerializers(serializers.ModelSerializer):
 
         fields = [
             'first_name', 'last_name', 'email',
-            'username', 'is_driver', 'driver', 'passenger'
+            'username', 'is_driver', 'driver', 'passenger','password'
 
         ]
+        extra_kwargs={
+            'password':{"write_only":True, "required":True}
+        }
+
         # depth = 1

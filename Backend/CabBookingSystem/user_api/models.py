@@ -29,30 +29,28 @@ class Passenger(models.Model):
 
 class UserManagerx(UserManager):
     def create_user(self, username, email=None, password=None, **extra_fields):
+        if not bool(email) :           
+            raise ValueError("The given email must be set")
+        if not bool(password) :           
+            raise ValueError("The given password must be set")
         passenger = Passenger()
         passenger.save()
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
         extra_fields.setdefault("is_driver", False)
         extra_fields.setdefault("passenger",passenger)
-        extra_fields.setdefault("driver", None)
-
-        # if is_driver and not ("driver" in extra_fields.keys()):
-        #     raise "is_driver = True: Driver object is required"
-        # elif is_driver and ("driver" in extra_fields.keys()):
-        #     extra_fields["driver"].save()
-        # elif not is_driver and ("driver" in extra_fields.keys()):
-        #     extra_fields["driver"] = None
-
+        extra_fields.setdefault("driver", None)   
         return self._create_user(username, email, password, **extra_fields)
 
 
 class Userx(AbstractUser):
+    email = models.EmailField("email address", unique=True)
     is_driver = models.BooleanField('driver status', default=False)
     driver = models.OneToOneField(Driver, on_delete=models.CASCADE, null=True)
     passenger = models.OneToOneField(
         Passenger, on_delete=models.CASCADE, null=True)
 
+    # REQUIRED_FIELDS=['password']
     objects = UserManagerx()
 
     def __str__(self) -> str:
