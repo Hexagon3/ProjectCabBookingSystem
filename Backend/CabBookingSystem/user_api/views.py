@@ -8,7 +8,7 @@ from django.contrib.auth import login, authenticate
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from .models import Userx, Passenger, Driver
+from .models import Userx,  Driver
 from user_api.serializers import UserxSerializers
 # Create your views here.
 
@@ -56,8 +56,6 @@ def user_signup(req):
     serializer = UserxSerializers(data=req.data)
     if serializer.is_valid(raise_exception=True):
         user = serializer.save()
-        user.set_password(req.data['password'])
-        user.save()
         print(user)
         data = serializer.data
         data["status"]="Success"
@@ -67,17 +65,15 @@ def list_user(req):
     s = Userx.objects.all()
 
 
-@api_view(['get'])
-def user_profile(req, pk=None):
-    if pk is None:
-        # user = req.user
-        # print(req.user)
-        # serializer = UserxSerializers(data= user)
-        return Response({})
-    user = Userx.objects.get(id=pk)
-    serializer = UserxSerializers(user)
-    print(pk)
-    return Response(serializer.data)
+@api_view(['post'])
+def user_profile(req):   
+    try:
+        user = req.user
+        print(user)
+        serializer = UserxSerializers(user)
+        return Response(serializer.data)
+    except:
+        return Response({"status":"Something Wrong"})
 
 
 @api_view(['get'])

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Car, Driver, Passenger, Userx
+from .models import Car, Driver, Userx
 
 
 class CarSerializers(serializers.ModelSerializer):
@@ -20,26 +20,22 @@ class DriverSerializers(serializers.ModelSerializer):
         ]
 
 
-class PassengerSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Passenger
-        fields = ["address", "schedule", ]
+
 
 
 class UserxSerializers(serializers.ModelSerializer):
-    # driver = DriverSerializers()
-    # passenger = PassengerSerializers()
-
+    # driver = DriverSerializers() 
     class Meta:
         model = Userx
 
         fields = [
             'first_name', 'last_name', 'email',
-            'username', 'is_driver', 'driver', 'passenger','password'
+            'username', 'is_driver', 'driver','password'
 
         ]
         extra_kwargs={
-            'password':{"write_only":True, "required":True}
+            'password':{"required":True}
+           
         }
 
         # depth = 1

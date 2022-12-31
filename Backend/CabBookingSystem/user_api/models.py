@@ -22,9 +22,6 @@ class Driver (models.Model):
     car = models.OneToOneField(Car, on_delete=models.CASCADE)
 
 
-class Passenger(models.Model):
-    address = models.TextField(null=True)
-    schedule = models.DateTimeField(null=True)
 
 
 class UserManagerx(UserManager):
@@ -33,22 +30,27 @@ class UserManagerx(UserManager):
             raise ValueError("The given email must be set")
         if not bool(password) :           
             raise ValueError("The given password must be set")
-        passenger = Passenger()
-        passenger.save()
+
         extra_fields.setdefault("is_staff", False)
         extra_fields.setdefault("is_superuser", False)
-        extra_fields.setdefault("is_driver", False)
-        extra_fields.setdefault("passenger",passenger)
+        extra_fields.setdefault("is_driver", False)  
+        extra_fields.setdefault("address", None)  
+        extra_fields.setdefault("schedule", None)  
         extra_fields.setdefault("driver", None)   
         return self._create_user(username, email, password, **extra_fields)
-
+        
+    def create(self, **validateData):
+        username = validateData["username"]; del validateData["username"]
+        email = validateData["email"]; del validateData["email"]
+        password = validateData["password"] ; del validateData["password"]
+        return self.create_user(username, email, password, **validateData)
 
 class Userx(AbstractUser):
     email = models.EmailField("email address", unique=True)
+    address = models.TextField(null=True)
+    schedule = models.DateTimeField(null=True)
     is_driver = models.BooleanField('driver status', default=False)
-    driver = models.OneToOneField(Driver, on_delete=models.CASCADE, null=True)
-    passenger = models.OneToOneField(
-        Passenger, on_delete=models.CASCADE, null=True)
+    driver = models.OneToOneField(Driver, on_delete=models.CASCADE, null=True)    
 
     # REQUIRED_FIELDS=['password']
     objects = UserManagerx()
